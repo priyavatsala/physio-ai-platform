@@ -4,6 +4,7 @@ import com.physioai.dto.LoginRequest;
 import com.physioai.entity.User;
 import com.physioai.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,7 +15,13 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public User registerUser(User user) {
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userRepository.save(user);
     }
 
@@ -29,7 +36,10 @@ public class UserService {
 
         User user = userOptional.get();
 
-        if (!user.getPassword().equals(loginRequest.getPassword())) {
+        if (!passwordEncoder.matches(
+                loginRequest.getPassword(),
+                user.getPassword()
+        )) {
             return "Invalid password";
         }
 
