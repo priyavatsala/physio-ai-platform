@@ -1,5 +1,6 @@
 package com.physioai.controller;
 
+import com.physioai.dto.LoginRequest;
 import com.physioai.entity.User;
 import com.physioai.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,10 @@ public class UserController {
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userService.registerUser(user);
+    }
+
+    @PostMapping("/login")
+    public String loginUser(@RequestBody LoginRequest loginRequest) {
+        return userService.loginUser(loginRequest);
     }
 }
