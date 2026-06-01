@@ -20,6 +20,10 @@ public class Doctor {
 
     private boolean verified;
 
+    @ManyToOne
+    @JoinColumn(name = "body_part_id")
+    private BodyPart bodyPart;
+
     public Doctor() {
     }
 
@@ -65,5 +69,13 @@ public class Doctor {
 
     public void setVerified(boolean verified) {
         this.verified = verified;
+    }
+
+    public BodyPart getBodyPart() {
+        return bodyPart;
+    }
+
+    public void setBodyPart(BodyPart bodyPart) {
+        this.bodyPart = bodyPart;
     }
 }
