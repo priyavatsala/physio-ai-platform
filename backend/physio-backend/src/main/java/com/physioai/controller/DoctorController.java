@@ -1,5 +1,6 @@
 package com.physioai.controller;
 
+import com.physioai.dto.RegisterDoctorRequest;
 import com.physioai.entity.Doctor;
 import com.physioai.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,22 @@ public class DoctorController {
     private DoctorService doctorService;
 
     @PostMapping("/register")
-    public Doctor registerDoctor(@RequestBody Doctor doctor) {
-        return doctorService.registerDoctor(doctor);
+    public Doctor registerDoctor(
+            @RequestBody RegisterDoctorRequest request
+    ) {
+
+        return doctorService.registerDoctor(
+                request
+        );
     }
 
     @GetMapping("/body-part/{bodyPartId}")
     public List<Doctor> getDoctorsByBodyPart(
-            @PathVariable Long bodyPartId) {
+            @PathVariable Long bodyPartId
+    ) {
 
-        return doctorService.getDoctorsByBodyPart(bodyPartId);
+        return doctorService.getDoctorsByBodyPart(
+                bodyPartId
+        );
     }
 }

@@ -22,21 +22,21 @@ function Layout({ children }) {
                             to="/"
                             className="p-3 rounded-lg hover:bg-slate-800"
                         >
-                            🏠 Home
+                            Home
                         </Link>
 
                         <Link
                             to="/chatbot"
                             className="p-3 rounded-lg hover:bg-slate-800"
                         >
-                            🤖 Chatbot
+                             Chatbot
                         </Link>
 
                         <Link
                             to="/assessment"
                             className="p-3 rounded-lg hover:bg-slate-800"
                         >
-                            🧍 Assessment
+                             Assessment
                         </Link>
 
                     </nav>

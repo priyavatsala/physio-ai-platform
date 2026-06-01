@@ -12,6 +12,8 @@ public class Doctor {
 
     private String fullName;
 
+    private String email;
+
     private String specialization;
 
     private int experience;
@@ -37,6 +39,14 @@ public class Doctor {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSpecialization() {

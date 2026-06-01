@@ -20,6 +20,12 @@ public class Video {
 
     private String tags;
 
+    private String status;
+
+    private String uploadedBy;
+
+    private String approvedBy;
+
     public Video() {
     }
 
@@ -65,5 +71,29 @@ public class Video {
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getUploadedBy() {
+        return uploadedBy;
+    }
+
+    public void setUploadedBy(String uploadedBy) {
+        this.uploadedBy = uploadedBy;
+    }
+
+    public String getApprovedBy() {
+        return approvedBy;
+    }
+
+    public void setApprovedBy(String approvedBy) {
+        this.approvedBy = approvedBy;
     }
 }

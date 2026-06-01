@@ -9,4 +9,10 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
 
     List<Video> findByBodyPart(String bodyPart);
 
+    List<Video> findByStatus(String status);
+
+    List<Video> findByBodyPartAndStatus(
+            String bodyPart,
+            String status
+    );
 }

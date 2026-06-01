@@ -16,12 +16,34 @@ public class VideoController {
     private VideoService videoService;
 
     @PostMapping("/upload")
-    public Video uploadVideo(@RequestBody Video video) {
+    public Video uploadVideo(
+            @RequestBody Video video
+    ) {
+
         return videoService.saveVideo(video);
     }
 
     @GetMapping("/body-part/{bodyPart}")
-    public List<Video> getVideosByBodyPart(@PathVariable String bodyPart) {
-        return videoService.getVideosByBodyPart(bodyPart);
+    public List<Video> getVideosByBodyPart(
+            @PathVariable String bodyPart
+    ) {
+
+        return videoService.getVideosByBodyPart(
+                bodyPart
+        );
+    }
+
+    @GetMapping("/pending")
+    public List<Video> getPendingVideos() {
+
+        return videoService.getPendingVideos();
+    }
+
+    @PutMapping("/approve/{id}")
+    public Video approveVideo(
+            @PathVariable Long id
+    ) {
+
+        return videoService.approveVideo(id);
     }
 }
