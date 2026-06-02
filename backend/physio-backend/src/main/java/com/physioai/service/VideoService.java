@@ -15,11 +15,6 @@ public class VideoService {
 
     public Video saveVideo(Video video) {
 
-        if (video.getStatus() == null) {
-
-            video.setStatus("PENDING");
-        }
-
         return videoRepository.save(video);
     }
 
@@ -27,10 +22,11 @@ public class VideoService {
             String bodyPart
     ) {
 
-        return videoRepository.findByBodyPartAndStatus(
-                bodyPart,
-                "APPROVED"
-        );
+        return videoRepository
+                .findByBodyPartIgnoreCaseAndStatus(
+                        bodyPart,
+                        "APPROVED"
+                );
     }
 
     public List<Video> getPendingVideos() {
@@ -40,14 +36,30 @@ public class VideoService {
         );
     }
 
-    public Video approveVideo(Long id) {
+    public Video approveVideo(
+            Long videoId
+    ) {
 
         Video video =
-                videoRepository.findById(id)
-                        .orElseThrow();
+                videoRepository.findById(
+                        videoId
+                ).orElseThrow();
 
-        video.setStatus("APPROVED");
+        video.setStatus(
+                "APPROVED"
+        );
 
-        return videoRepository.save(video);
+        return videoRepository.save(
+                video
+        );
+    }
+
+    public List<Video> getVideosByDoctor(
+            String email
+    ) {
+
+        return videoRepository.findByUploadedBy(
+                email
+        );
     }
 }

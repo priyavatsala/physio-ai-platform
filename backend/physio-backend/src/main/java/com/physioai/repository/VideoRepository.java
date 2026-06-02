@@ -7,12 +7,14 @@ import java.util.List;
 
 public interface VideoRepository extends JpaRepository<Video, Long> {
 
-    List<Video> findByBodyPart(String bodyPart);
+    List<Video> findByBodyPartIgnoreCase(String bodyPart);
 
     List<Video> findByStatus(String status);
 
-    List<Video> findByBodyPartAndStatus(
+    List<Video> findByBodyPartIgnoreCaseAndStatus(
             String bodyPart,
             String status
     );
+
+    List<Video> findByUploadedBy(String uploadedBy);
 }
