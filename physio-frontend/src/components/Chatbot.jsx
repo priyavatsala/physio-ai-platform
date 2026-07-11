@@ -26,7 +26,7 @@ function Chatbot() {
         try {
 
             const res = await fetch(
-                "http://localhost:8080/api/chatbot",
+                "http://https://physio-ai-platform-production.up.railway.app:8080/api/chatbot",
                 {
                     method: "POST",
                     headers: {

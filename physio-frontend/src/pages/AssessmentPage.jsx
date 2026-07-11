@@ -27,7 +27,7 @@ function AssessmentPage() {
         try {
 
             const videoResponse = await fetch(
-                `http://localhost:8080/api/videos/body-part/${selectedPart}`
+                `http://https://physio-ai-platform-production.up.railway.app:8080/api/videos/body-part/${selectedPart}`
             );
 
             const videoData =
@@ -36,7 +36,7 @@ function AssessmentPage() {
             setVideos(videoData);
 
             const doctorResponse = await fetch(
-                `http://localhost:8080/api/doctors/body-part/${bodyPartMap[selectedPart]}`
+                `http://https://physio-ai-platform-production.up.railway.app:8080/api/doctors/body-part/${bodyPartMap[selectedPart]}`
             );
 
             const doctorData =

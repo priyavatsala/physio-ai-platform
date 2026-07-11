@@ -14,7 +14,7 @@ function BodyModel() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/api/symptoms/body-part/${bodyPartId}`
+                `http://https://physio-ai-platform-production.up.railway.app:8080/api/symptoms/body-part/${bodyPartId}`
             );
 
             const data = await response.json();
@@ -22,7 +22,7 @@ function BodyModel() {
             setSymptoms(data);
 
             const doctorResponse = await fetch(
-                `http://localhost:8080/api/doctors/body-part/${bodyPartId}`
+                `http://https://physio-ai-platform-production.up.railway.app:8080/api/doctors/body-part/${bodyPartId}`
             );
 
             const doctorData =

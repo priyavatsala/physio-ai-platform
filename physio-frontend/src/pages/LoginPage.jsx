@@ -13,7 +13,7 @@ function LoginPage() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/users/login",
+                "http://https://physio-ai-platform-production.up.railway.app:8080/api/users/login",
                 {
                     method: "POST",
                     headers: {

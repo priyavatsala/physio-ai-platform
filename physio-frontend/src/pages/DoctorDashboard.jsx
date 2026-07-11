@@ -22,7 +22,7 @@ function DoctorDashboard() {
     const loadVideos = async () => {
 
         const response = await fetch(
-            `http://localhost:8080/api/videos/doctor/${doctorEmail}`
+            `http://https://physio-ai-platform-production.up.railway.app:8080/api/videos/doctor/${doctorEmail}`
         );
 
         const data = await response.json();
@@ -35,7 +35,7 @@ function DoctorDashboard() {
         e.preventDefault();
 
         const response = await fetch(
-            "http://localhost:8080/api/videos/upload",
+            "http://https://physio-ai-platform-production.up.railway.app:8080/api/videos/upload",
             {
                 method: "POST",
                 headers: {

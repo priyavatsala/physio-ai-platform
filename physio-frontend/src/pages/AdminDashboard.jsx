@@ -15,7 +15,7 @@ function AdminDashboard() {
     const loadDoctors = async () => {
 
         const response = await fetch(
-            "http://localhost:8080/api/admin/pending-doctors"
+            "http://https://physio-ai-platform-production.up.railway.app:8080/api/admin/pending-doctors"
         );
 
         const data = await response.json();
@@ -26,7 +26,7 @@ function AdminDashboard() {
     const loadVideos = async () => {
 
         const response = await fetch(
-            "http://localhost:8080/api/videos/pending"
+            "http://https://physio-ai-platform-production.up.railway.app:8080/api/videos/pending"
         );
 
         const data = await response.json();
@@ -37,7 +37,7 @@ function AdminDashboard() {
     const approveDoctor = async (id) => {
 
         await fetch(
-            `http://localhost:8080/api/admin/approve-doctor/${id}`,
+            `http://https://physio-ai-platform-production.up.railway.app:8080/api/admin/approve-doctor/${id}`,
             {
                 method: "PUT"
             }
@@ -49,7 +49,7 @@ function AdminDashboard() {
     const approveVideo = async (id) => {
 
         await fetch(
-            `http://localhost:8080/api/videos/approve/${id}`,
+            `http://https://physio-ai-platform-production.up.railway.app:8080/api/videos/approve/${id}`,
             {
                 method: "PUT"
             }

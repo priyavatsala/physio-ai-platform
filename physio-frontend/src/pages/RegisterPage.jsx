@@ -34,7 +34,7 @@ function RegisterPage() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/users/register",
+                "http://https://physio-ai-platform-production.up.railway.app:8080/api/users/register",
                 {
                     method: "POST",
                     headers: {
@@ -78,7 +78,7 @@ function RegisterPage() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/doctors/register",
+                "http://https://physio-ai-platform-production.up.railway.app:8080/api/doctors/register",
                 {
                     method: "POST",
                     headers: {
